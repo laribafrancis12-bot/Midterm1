@@ -10,9 +10,7 @@ Public Class Form1
     Private selectedID As Integer = -1
 
 
-    '========================================
-    ' FORM LOAD
-    '========================================
+
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'Create Excel database
@@ -27,9 +25,8 @@ Public Class Form1
     End Sub
 
 
-    '========================================
-    ' CREATE EXCEL DATABASE
-    '========================================
+    ' CREATE EXCEL DATABASE ' 
+
     Private Sub CreateDatabase()
 
         If Not File.Exists(excelFile) Then
@@ -56,9 +53,9 @@ Public Class Form1
     End Sub
 
 
-    '========================================
-    ' CREATE EXCEL HEADERS
-    '========================================
+
+    ' CREATE EXCEL HEADERS '
+
     Private Sub CreateHeaders(ws As IXLWorksheet)
 
         ws.Cell(1, 1).Value = "ID"
@@ -75,9 +72,8 @@ Public Class Form1
     End Sub
 
 
-    '========================================
-    ' LOAD VOLUNTEERS
-    '========================================
+    ' LOAD VOLUNTEERS '
+
     Private Sub LoadVolunteers()
 
         dgvVolunteers.Rows.Clear()
@@ -138,9 +134,9 @@ Public Class Form1
     End Sub
 
 
-    '========================================
-    ' GET SELECTED DAYS
-    '========================================
+
+    ' GET SELECTED DAYS '
+
     Private Function GetSelectedDays() As String
 
         Dim days As New List(Of String)
@@ -156,9 +152,9 @@ Public Class Form1
     End Function
 
 
-    '========================================
-    ' CHECK IF AT LEAST ONE DAY IS SELECTED
-    '========================================
+
+    ' CHECK IF AT LEAST ONE DAY IS SELECTED '          
+
     Private Function HasSelectedDay() As Boolean
 
         Return clbDays.CheckedItems.Count > 0
@@ -166,9 +162,9 @@ Public Class Form1
     End Function
 
 
-    '========================================
-    ' GET DAYS FROM EXCEL
-    '========================================
+
+    ' GET DAYS FROM EXCEL '
+
     Private Function GetDays(ws As IXLWorksheet,
                              row As Integer) As String
 
@@ -209,9 +205,9 @@ Public Class Form1
     End Function
 
 
-    '========================================
-    ' ADD
-    '========================================
+
+    ' ADD '
+
     Private Sub btnAdd_Click(sender As Object,
                              e As EventArgs) Handles btnAdd.Click
 
@@ -353,9 +349,9 @@ Public Class Form1
     End Sub
 
 
-    '========================================
-    ' GET NEXT ID
-    '========================================
+
+    ' GET NEXT ID '
+
     Private Function GetNextID(ws As IXLWorksheet) As Integer
 
         If ws.LastRowUsed() Is Nothing Then
@@ -398,9 +394,9 @@ Public Class Form1
     End Function
 
 
-    '========================================
-    ' EDIT
-    '========================================
+
+    ' EDIT '
+
     Private Sub btnEdit_Click(sender As Object,
                               e As EventArgs) Handles btnEdit.Click
 
@@ -487,9 +483,9 @@ Public Class Form1
     End Sub
 
 
-    '========================================
-    ' FIND VOLUNTEER ROW
-    '========================================
+
+    ' FIND VOLUNTEER ROW '
+
     Private Function FindVolunteerRow(
         ws As IXLWorksheet,
         id As Integer) As Integer
@@ -522,9 +518,9 @@ Public Class Form1
     End Function
 
 
-    '========================================
-    ' UPDATE
-    '========================================
+
+    ' UPDATE '
+
     Private Sub btnUpdate_Click(sender As Object,
                                 e As EventArgs) Handles btnUpdate.Click
 
@@ -652,9 +648,8 @@ Public Class Form1
     End Sub
 
 
-    '========================================
-    ' DELETE
-    '========================================
+
+    ' DELETE '
     Private Sub btnDelete_Click(sender As Object,
                                 e As EventArgs) Handles btnDelete.Click
 
@@ -769,9 +764,9 @@ Public Class Form1
     End Sub
 
 
-    '========================================
-    ' OPEN RETRIEVE FORM
-    '========================================
+
+    ' OPEN RETRIEVE FORM '
+
     Private Sub btnRetrieve_Click(sender As Object,
                                   e As EventArgs) Handles btnRetrieve.Click
 
@@ -784,9 +779,9 @@ Public Class Form1
     End Sub
 
 
-    '========================================
-    ' GO TO DATABASE
-    '========================================
+
+    ' GO TO DATABASE '
+
     Private Sub btnDatabase_Click(sender As Object,
                                   e As EventArgs) Handles btnDatabase.Click
 
@@ -808,9 +803,9 @@ Public Class Form1
     End Sub
 
 
-    '========================================
-    ' CLEAR FIELDS
-    '========================================
+
+    ' CLEAR FIELDS '
+
     Private Sub ClearFields()
 
         txtName.Clear()

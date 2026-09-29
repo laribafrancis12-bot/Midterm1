@@ -27,14 +27,16 @@ Partial Class frmRetrieve
         dgvDeleted = New DataGridView()
         btnRetrieve = New Button()
         btnClose = New Button()
+        Panel1 = New Panel()
         CType(dgvDeleted, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(196, 23)
+        Label1.Location = New Point(262, 23)
         Label1.Name = "Label1"
         Label1.Size = New Size(188, 30)
         Label1.TabIndex = 0
@@ -43,24 +45,25 @@ Partial Class frmRetrieve
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(48, 78)
+        Label2.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(22, 77)
         Label2.Name = "Label2"
-        Label2.Size = New Size(108, 15)
+        Label2.Size = New Size(143, 20)
         Label2.TabIndex = 1
         Label2.Text = "Deleted Volunteers:"
         ' 
         ' dgvDeleted
         ' 
         dgvDeleted.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        dgvDeleted.Location = New Point(48, 96)
+        dgvDeleted.Location = New Point(50, 109)
         dgvDeleted.Name = "dgvDeleted"
         dgvDeleted.ReadOnly = True
-        dgvDeleted.Size = New Size(541, 284)
+        dgvDeleted.Size = New Size(613, 284)
         dgvDeleted.TabIndex = 2
         ' 
         ' btnRetrieve
         ' 
-        btnRetrieve.Location = New Point(171, 412)
+        btnRetrieve.Location = New Point(170, 409)
         btnRetrieve.Name = "btnRetrieve"
         btnRetrieve.Size = New Size(75, 23)
         btnRetrieve.TabIndex = 3
@@ -69,27 +72,38 @@ Partial Class frmRetrieve
         ' 
         ' btnClose
         ' 
-        btnClose.Location = New Point(356, 412)
+        btnClose.Location = New Point(454, 409)
         btnClose.Name = "btnClose"
         btnClose.Size = New Size(75, 23)
         btnClose.TabIndex = 4
         btnClose.Text = "Close"
         btnClose.UseVisualStyleBackColor = True
         ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = SystemColors.MenuHighlight
+        Panel1.Controls.Add(Label1)
+        Panel1.Location = New Point(-2, -5)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(725, 69)
+        Panel1.TabIndex = 5
+        ' 
         ' frmRetrieve
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(634, 485)
+        ClientSize = New Size(720, 485)
         Controls.Add(btnClose)
         Controls.Add(btnRetrieve)
         Controls.Add(dgvDeleted)
         Controls.Add(Label2)
-        Controls.Add(Label1)
+        Controls.Add(Panel1)
         Name = "frmRetrieve"
         StartPosition = FormStartPosition.CenterScreen
         Text = "frmRetrieve"
         CType(dgvDeleted, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -99,4 +113,5 @@ Partial Class frmRetrieve
     Friend WithEvents dgvDeleted As DataGridView
     Friend WithEvents btnRetrieve As Button
     Friend WithEvents btnClose As Button
+    Friend WithEvents Panel1 As Panel
 End Class

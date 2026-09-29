@@ -37,14 +37,17 @@ Partial Class Form1
         btnRetrieve = New Button()
         btnDatabase = New Button()
         Label2 = New Label()
+        Panel1 = New Panel()
         CType(dgvVolunteers, ComponentModel.ISupportInitialize).BeginInit()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(236, 30)
+        Label1.Location = New Point(260, 26)
         Label1.Name = "Label1"
         Label1.Size = New Size(315, 32)
         Label1.TabIndex = 0
@@ -53,9 +56,10 @@ Partial Class Form1
         ' lblname
         ' 
         lblname.AutoSize = True
-        lblname.Location = New Point(40, 115)
+        lblname.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblname.Location = New Point(40, 106)
         lblname.Name = "lblname"
-        lblname.Size = New Size(44, 15)
+        lblname.Size = New Size(57, 20)
         lblname.TabIndex = 1
         lblname.Text = "NAME:"
         ' 
@@ -69,9 +73,10 @@ Partial Class Form1
         ' lblcity
         ' 
         lblcity.AutoSize = True
-        lblcity.Location = New Point(44, 190)
+        lblcity.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblcity.Location = New Point(40, 185)
         lblcity.Name = "lblcity"
-        lblcity.Size = New Size(34, 15)
+        lblcity.Size = New Size(43, 20)
         lblcity.TabIndex = 3
         lblcity.Text = "CITY:"
         ' 
@@ -85,9 +90,10 @@ Partial Class Form1
         ' lbldays
         ' 
         lbldays.AutoSize = True
-        lbldays.Location = New Point(44, 273)
+        lbldays.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lbldays.Location = New Point(40, 268)
         lbldays.Name = "lbldays"
-        lbldays.Size = New Size(86, 15)
+        lbldays.Size = New Size(113, 20)
         lbldays.TabIndex = 5
         lbldays.Text = "Days Available:"
         ' 
@@ -103,13 +109,14 @@ Partial Class Form1
         ' dgvVolunteers
         ' 
         dgvVolunteers.AllowUserToAddRows = False
+        dgvVolunteers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgvVolunteers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgvVolunteers.Location = New Point(70, 634)
         dgvVolunteers.MultiSelect = False
         dgvVolunteers.Name = "dgvVolunteers"
         dgvVolunteers.ReadOnly = True
         dgvVolunteers.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        dgvVolunteers.Size = New Size(585, 242)
+        dgvVolunteers.Size = New Size(604, 242)
         dgvVolunteers.TabIndex = 7
         ' 
         ' btnAdd
@@ -169,17 +176,28 @@ Partial Class Form1
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.Location = New Point(40, 607)
         Label2.Name = "Label2"
-        Label2.Size = New Size(123, 15)
+        Label2.Size = New Size(162, 20)
         Label2.TabIndex = 14
         Label2.Text = "Registered Volunteers:"
+        ' 
+        ' Panel1
+        ' 
+        Panel1.BackColor = SystemColors.MenuHighlight
+        Panel1.Controls.Add(Label1)
+        Panel1.Location = New Point(-2, -3)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(867, 87)
+        Panel1.TabIndex = 15
         ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(861, 888)
+        Controls.Add(Panel1)
         Controls.Add(Label2)
         Controls.Add(btnDatabase)
         Controls.Add(btnRetrieve)
@@ -194,11 +212,12 @@ Partial Class Form1
         Controls.Add(lblcity)
         Controls.Add(txtName)
         Controls.Add(lblname)
-        Controls.Add(Label1)
         Name = "Form1"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Form1"
         CType(dgvVolunteers, ComponentModel.ISupportInitialize).EndInit()
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -218,5 +237,6 @@ Partial Class Form1
     Friend WithEvents btnRetrieve As Button
     Friend WithEvents btnDatabase As Button
     Friend WithEvents Label2 As Label
+    Friend WithEvents Panel1 As Panel
 
 End Class
